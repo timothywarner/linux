@@ -1,3 +1,11 @@
+Find-Module -Name nx
+
+Install-Module -Name nx -Verbose
+
+Get-DscResource -Name nx*
+
+Get-DscResource -Name nxFile | Select-Object -ExpandProperty Properties
+
 Set-Location -Path 'C:\Users\trainer\Documents\LinuxDSC'
 
 Configuration ExampleConfiguration {
