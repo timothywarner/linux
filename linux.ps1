@@ -98,7 +98,7 @@ sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.
 
 Start-Process -FilePath https://github.com/PowerShell/PowerShell/releases/
 
-sudo rpm -Uvh powershell-6.0.0_alpha.11-1.el7.centos.x86_64.rpm
+sudo yum install ./powershell-6.0.0_alpha.11-1.el7.centos.x86_64.rpm
 
 powershell
 
