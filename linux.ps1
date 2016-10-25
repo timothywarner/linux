@@ -10,6 +10,8 @@ break
 
 #region Install Linux Prereqs
 
+su -c 'yum update'
+
 yum groupinstall 'Development Tools'
 yum install pam-devel
 yum install openssl-devel
@@ -23,6 +25,8 @@ yum install wget
 Start-Process -FilePath https://github.com/Microsoft/omi/releases
 
 openssl version
+
+wget https://github.com/Microsoft/omi/releases/download/v1.1.0-0/omi-1.1.0.ssl_100.x64.rpm
 
 sudo rpm -Uvh ./omi-1.1.0.ssl_100.x64.rpm
 
