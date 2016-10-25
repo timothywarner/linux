@@ -104,11 +104,15 @@ powershell
 
 $PSVersionTable
 
-New-Item hellolinux.txt
+Get-Command | Measure-Object | Select-Object -Property Count
+
+New-Item -Type File -Path ./hellolinux.txt
 
 Set-Content hellolinux.txt -Value "Glad to be here!"
 
 Get-Process -Name powershell
+
+Get-Process | Get-Member
 
 Get-Alias
 

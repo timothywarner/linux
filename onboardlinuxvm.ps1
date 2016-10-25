@@ -2,6 +2,7 @@
 # ARM
 $defaultStorageAccount = 'itedgestorage'
 $defaultResourceGroup = 'ITEdgeRG'
+$defaultAutomationAccount = 'itedgedsc'
 
 Login-AzureRmAccount
 Select-AzureRmSubscription -SubscriptionName '150dollar'
@@ -26,6 +27,19 @@ Start-Process -FilePath https://azure.microsoft.com/en-us/documentation/template
 # Or do a manual registration from inside the Linux Azure VM:
 cd /opt/microsoft/dsc/Scripts
 sudo ./Register.py <accountkey> <accountURL>
+
+#endregion
+
+#region Misc
+
+$reginfo = Get-AzureRmAutomationRegistrationInfo -ResourceGroupName $defaultResourceGroup -AutomationAccountName 'itedgedsc'
+$reginfo.PrimaryKey
+$reginfo.Endpoint
+
+Get-Command -Module AzureRM.Automation -Noun *DscNode* | Select-Object -Property Name
+
+$node1 = Get-AzureRmAutomationDscNode -ResourceGroupName $defaultResourceGroup -AutomationAccountName $defaultAutomationAccount
+
 
 #endregion
 
