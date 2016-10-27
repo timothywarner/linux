@@ -30,6 +30,7 @@ openssl version
 
 wget https://github.com/Microsoft/omi/releases/download/v1.1.0-0/omi-1.1.0.ssl_100.x64.rpm
 
+# rpm resolves dependencies. U = upgrade (install if not present)  v = verbose output h = hash progress marks
 sudo rpm -Uvh ./omi-1.1.0.ssl_100.x64.rpm
 
 # the hard way
@@ -53,9 +54,9 @@ sudo make install
 /opt/omi/bin/service_control
 
 # restart OMI
-sudo /opt/omi/bin/service_control restart
+sudo /opt/omi/bin/service_control restart/stop/start
 
-# test OMI (enumerates instances of the OMI_Identity class in the root/omi CIM namespace
+# test OMI (enumerates instances of the OMI_Identity class in the root/omi CIM namespace)
 sudo /opt/omi/bin/omicli ei root/omi OMI_Identify
 
 # config file
