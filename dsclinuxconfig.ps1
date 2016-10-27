@@ -6,7 +6,11 @@ Get-DscResource -Name nx*
 
 Get-DscResource -Name nxFile | Select-Object -ExpandProperty Properties
 
-Set-Location -Path 'C:\Users\trainer\Documents\LinuxDSC'
+Set-Location -Path 'C:\Users\Tim\Desktop\linux'
+
+ise .\sampleconfig1.ps1
+
+ise .\SampleConfig1\localhost.mof
 
 Configuration ExampleConfiguration {
 
@@ -41,3 +45,9 @@ $opt = New-CimSessionOption -UseSsl:$false
 $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
 
 Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose
+
+# contrast with Azure Automation DSC
+
+Start-Process -FilePath https://portal.azure.com
+
+ise .\onboardlinuxvm.ps1
