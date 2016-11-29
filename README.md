@@ -1,2 +1,2 @@
-# Linux on Azure Session Materials
+# Live 360: Linux on Azure Session Materials
 
